@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect
 import csv
+import os
 # from flask_mail import Mail
 app = Flask(__name__)
 
@@ -29,4 +30,5 @@ def submit_form():
     else:
         return 'something went wrong'
 if __name__ == '__main__':
-    app.run(debug=True)
+     port = int(os.environ.get("PORT", 5000))
+     app.run(debug=True, port=port)
