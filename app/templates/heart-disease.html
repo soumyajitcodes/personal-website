@@ -1,53 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Heart Disease Prediction Project">
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
-  <link rel="icon" href="./static/assets/apple-icon-180x180.png">
-  
-  <!-- FontAwesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+{% extends "base.html" %}
+{% set active_page = "projects" %}
 
-  <title>Heart Disease Prediction - Soumyajit Das</title>
-  <link href="./static/style.css" rel="stylesheet">
-  <meta property="og:title" content="Soumyajit Das - Backend Developer & GenAI Engineer">
-  <meta property="og:description" content="Portfolio of Soumyajit Das - Systems Engineer specializing in Backend and Generative AI.">
-  <meta property="og:image" content="/static/assets/images/profil.jpeg">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-</head>
+{% block title %}Projects - Soumyajit Das{% endblock %}
 
-<body>
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="container">
-      <a href="./index.html" class="nav-brand text-gradient">SD.</a>
-      
-      <button class="mobile-menu-btn" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-
-            <div style="display: flex; align-items: center;">
-        <nav class="nav-links">
-          <a href="./index.html">Home</a>
-          <a href="./certifications.html">Certifications</a>
-          <a href="./badges.html">Badges</a>
-          <a href="./projects.html" class="active">Projects</a>
-          <a href="./about.html">About Me</a>
-          <a href="./contact.html">Contact</a>
-        </nav>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <i class="fas fa-sun"></i>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main style="padding-top: 80px; min-height: 100vh;">
+{% block content %}
+<main style="padding-top: 80px; min-height: 100vh;">
     <!-- Project Hero -->
     <section class="section" style="padding-top: 0;">
       <div style="width: 100%; height: 50vh; overflow: hidden; position: relative;">
@@ -105,12 +62,4 @@
 </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Soumyajit Das. Built with FastAPI & uv.</p>
-    </div>
-  </footer>
-
-  <script src="./static/main.js"></script>
-</body>
-</html>
+{% endblock %}

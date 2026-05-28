@@ -1,54 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Soumyajit Das - Python Developer and Machine Learning Enthusiast">
-  
-  <meta property="og:title" content="Soumyajit Das - Backend Developer & GenAI Engineer">
-  <meta property="og:description" content="Portfolio of Soumyajit Das - Systems Engineer specializing in Backend and Generative AI.">
-  <meta property="og:image" content="/static/assets/images/profil.jpeg">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
-  <link rel="icon" href="./static/assets/apple-icon-180x180.png">
-  
-  <!-- FontAwesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+{% extends "base.html" %}
+{% set active_page = "home" %}
 
-  <title>Soumyajit Das - Portfolio</title>
-  <link href="./static/style.css" rel="stylesheet">
-</head>
+{% block title %}Home - Soumyajit Das{% endblock %}
 
-<body>
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="container">
-      <a href="./index.html" class="nav-brand text-gradient">SD.</a>
-      
-      <button class="mobile-menu-btn" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <div style="display: flex; align-items: center;">
-        <nav class="nav-links">
-          <a href="./index.html" class="active">Home</a>
-          <a href="./certifications.html">Certifications</a>
-          <a href="./badges.html">Badges</a>
-          <a href="./projects.html">Projects</a>
-          <a href="./about.html">About Me</a>
-          <a href="./contact.html">Contact</a>
-        </nav>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <i class="fas fa-sun"></i>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
+{% block content %}
+<!-- Hero Section -->
   <main>
     <section class="hero">
       <div class="hero-bg"></div>
@@ -66,9 +22,9 @@
           </div>
           
           <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="./projects.html" class="btn btn-primary magnetic">View My Work</a>
+            <a href="/projects" class="btn btn-primary magnetic">View My Work</a>
             <a href="/static/assets/resume.pdf" class="btn magnetic" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);" target="_blank" rel="noopener noreferrer"><i class="fas fa-download" style="margin-right: 8px;"></i> Download Resume</a>
-            <a href="./contact.html" class="btn magnetic" style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">Get In Touch</a>
+            <a href="/contact" class="btn magnetic" style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">Get In Touch</a>
           </div>
         </div>
       </div>
@@ -122,14 +78,14 @@
         <h2 class="text-center" style="font-size: 2.5rem; margin-bottom: var(--space-xl);">What People Say</h2>
         <div class="grid grid-cols-2">
           <div class="card testimonial-card">
-            <p class="card-text" style="font-style: italic; font-size: 1.1rem;">"Soumyajit consistently delivers high-quality backend code. His expertise in optimizing POS systems directly improved our core metrics. A fantastic engineer."</p>
-            <h4 style="margin-bottom: 0;">Jane Doe</h4>
-            <span style="color: var(--accent-primary); font-size: 0.9rem;">Engineering Manager</span>
+            <p class="card-text" style="font-style: italic; font-size: 1.1rem;">"I have worked with Soumyajit for the same project. Soumyajit is also always the first to jump in if newer members of the team run into issues. He is very dedicated to his work and always up for learning more."</p>
+            <h4 style="margin-bottom: 0;">Shivam Singh</h4>
+            <span style="color: var(--accent-primary); font-size: 0.9rem;">Software Development Engineer @ Amazon | Building Scalable Software Solutions</span>
           </div>
           <div class="card testimonial-card">
-            <p class="card-text" style="font-style: italic; font-size: 1.1rem;">"His knowledge of GenAI integration was instrumental in automating our code quality checks. Soumyajit bridges the gap between traditional engineering and modern AI flawlessly."</p>
-            <h4 style="margin-bottom: 0;">John Smith</h4>
-            <span style="color: var(--accent-primary); font-size: 0.9rem;">Lead Architect</span>
+            <p class="card-text" style="font-style: italic; font-size: 1.1rem;">"I have worked with Soumyajit as a software developer and can attest to their coding and technical skills. Soumyajit is highly skilled in Programming Language and has consistently developed high-quality, scalable software solutions for our team. Soumyajit is able to quickly learn and adapt to new technologies, making them a valuable asset in a rapidly evolving field. He works well in a team and can effectively communicate technical information."</p>
+            <h4 style="margin-bottom: 0;">Vaidehi Baranwal</h4>
+            <span style="color: var(--accent-primary); font-size: 0.9rem;">Assistant Consultant @ Tata Consultancy Services</span>
           </div>
         </div>
       </div>
@@ -137,12 +93,4 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Soumyajit Das. Built with FastAPI & uv.</p>
-    </div>
-  </footer>
-
-  <script src="./static/main.js"></script>
-</body>
-</html>
+{% endblock %}

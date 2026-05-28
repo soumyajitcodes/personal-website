@@ -1,53 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact Soumyajit Das">
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
-  <link rel="icon" href="./static/assets/apple-icon-180x180.png">
-  
-  <!-- FontAwesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+{% extends "base.html" %}
+{% set active_page = "contact" %}
 
-  <title>Contact - Soumyajit Das</title>
-  <link href="./static/style.css" rel="stylesheet">
-  <meta property="og:title" content="Soumyajit Das - Backend Developer & GenAI Engineer">
-  <meta property="og:description" content="Portfolio of Soumyajit Das - Systems Engineer specializing in Backend and Generative AI.">
-  <meta property="og:image" content="/static/assets/images/profil.jpeg">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-</head>
+{% block title %}Contact - Soumyajit Das{% endblock %}
 
-<body>
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="container">
-      <a href="./index.html" class="nav-brand text-gradient">SD.</a>
-      
-      <button class="mobile-menu-btn" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-
-            <div style="display: flex; align-items: center;">
-        <nav class="nav-links">
-          <a href="./index.html">Home</a>
-          <a href="./certifications.html">Certifications</a>
-          <a href="./badges.html">Badges</a>
-          <a href="./projects.html">Projects</a>
-          <a href="./about.html">About Me</a>
-          <a href="./contact.html" class="active">Contact</a>
-        </nav>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <i class="fas fa-sun"></i>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main style="padding-top: 100px; min-height: 100vh;">
+{% block content %}
+<main style="padding-top: 100px; min-height: 100vh;">
     <section class="section">
       <div class="container">
         <div class="reveal text-center" style="margin-bottom: var(--space-xl);">
@@ -58,7 +15,7 @@
         <div class="grid grid-cols-2" style="align-items: start;">
           <!-- Contact Form -->
           <div class="reveal">
-            <form action="submit_form" method="post" name="contact-form" class="card">
+            <form action="/submit_form" method="POST" name="contact-form" class="card">
               <h3 style="margin-bottom: var(--space-lg);">Send me a message</h3>
               
               <div class="form-group">
@@ -77,31 +34,8 @@
             </form>
           </div>
 
-          <!-- Contact Details -->
+          <!-- Social Links -->
           <div class="reveal" style="display: flex; flex-direction: column; gap: var(--space-lg);">
-            <div class="card">
-              <h3 style="margin-bottom: var(--space-lg);">Contact Details</h3>
-              <ul style="display: flex; flex-direction: column; gap: 1rem;">
-                <li style="display: flex; align-items: center; gap: 1rem; color: var(--text-secondary);">
-                  <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-card); display: flex; align-items: center; justify-content: center; color: var(--accent-primary);">
-                    <i class="fas fa-phone"></i>
-                  </div>
-                  +91 7999880338
-                </li>
-                <li style="display: flex; align-items: center; gap: 1rem; color: var(--text-secondary);">
-                  <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-card); display: flex; align-items: center; justify-content: center; color: var(--accent-primary);">
-                    <i class="fas fa-at"></i>
-                  </div>
-                  soumyajitdas.work@outlook.com
-                </li>
-                <li style="display: flex; align-items: center; gap: 1rem; color: var(--text-secondary);">
-                  <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-card); display: flex; align-items: center; justify-content: center; color: var(--accent-primary);">
-                    <i class="fas fa-map-marker-alt"></i>
-                  </div>
-                  Bhilai, Chhattisgarh
-                </li>
-              </ul>
-            </div>
 
             <div class="card">
               <h3 style="margin-bottom: var(--space-md);">Follow Me</h3>
@@ -124,12 +58,4 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Soumyajit Das. Built with FastAPI & uv.</p>
-    </div>
-  </footer>
-
-  <script src="./static/main.js"></script>
-</body>
-</html>
+{% endblock %}
