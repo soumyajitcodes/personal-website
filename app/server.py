@@ -6,17 +6,20 @@ import csv
 import smtplib
 from email.message import EmailMessage
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
 
+BASE_DIR = Path(__file__).resolve().parent
+
 app = FastAPI()
 
 # Mount static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
 
 # Setup templates
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 
 PROJECTS_DB = {
     "dog-breed": {
@@ -89,9 +92,13 @@ def send_email(name, email, subject, message):
         return False
 
 def write_to_csv(name: str, email: str, subject: str, message: str):
-    with open('database.csv', mode='a', newline='', encoding='utf-8') as database:
-        csv_writer = csv.writer(database, delimiter=',', quoting=csv.QUOTE_MINIMAL)
-        csv_writer.writerow([name, email, subject, message])
+    try:
+        csv_path = Path(__file__).resolve().parent / 'database.csv'
+        with open(csv_path, mode='a', newline='', encoding='utf-8') as database:
+            csv_writer = csv.writer(database, delimiter=',', quoting=csv.QUOTE_MINIMAL)
+            csv_writer.writerow([name, email, subject, message])
+    except Exception as e:
+        print(f"Warning: Could not write to CSV (read-only filesystem?): {e}")
 
 @app.post("/submit_form")
 def submit_form(
