@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: soumyajit-portfolio
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.server:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SMTP_SERVER
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "587"
+      # IMPORTANT: Do not put your actual passwords here! 
+      # Add SMTP_USER and SMTP_PASSWORD directly in the Render dashboard.

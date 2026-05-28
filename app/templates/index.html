@@ -1,88 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% set active_page = "home" %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+{% block title %}Home - Soumyajit Das{% endblock %}
 
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./static/assets/apple-icon-180x180.png" rel="icon">
+{% block content %}
+<!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container">
+        <div class="hero-content reveal">
+          <h1 class="hero-title">Hello,<br>I'm <span class="text-gradient">Soumyajit Das</span></h1>
+          <h2 class="hero-subtitle">
+            <span id="typed"></span><span class="typed-cursor">|</span>
+          </h2>
+          <div id="typed-strings">
+            <span>Backend Developer</span>
+            <span>GenAI Engineer</span>
+            <span>Java & Python Developer</span>
+            <span>Systems Engineer</span>
+          </div>
+          
+          <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="/projects" class="btn btn-primary magnetic">View My Work</a>
+            <a href="/static/assets/resume.pdf" class="btn magnetic" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);" target="_blank" rel="noopener noreferrer"><i class="fas fa-download" style="margin-right: 8px;"></i> Download Resume</a>
+            <a href="/contact" class="btn magnetic" style="background: transparent; border: 1px solid rgba(255,255,255,0.2);">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <title>Home</title>
-
-<link href="./static/style.css" rel="stylesheet"></head>
-
-<body class="minimal">
-<div id="site-border-left"></div>
-<div id="site-border-right"></div>
-<div id="site-border-top"></div>
-<div id="site-border-bottom"></div>
-<!-- Add your content of header -->
-<header>
-  <nav class="navbar  navbar-fixed-top navbar-inverse">
-    <div class="container">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav ">
-          <li><a href="./index.html" title="Home Page">Home</a></li>
-          <li><a href="./certifications.html" title="Certification Page">Certifications</a></li>
-          <li><a href="./badges.html" title="Badges Page">Badges</a></li>
-          <li><a href="./projects.html" title="Projects Page">Projects</a></li>
-          <li><a href="./about.html" title="About Page">About Me</a></li>
-          <li><a href="./contact.html" title="Contact Page">Contact</a></li>
-
-        </ul>
-
-
-      </div> 
-    </div>
-  </nav>
-</header>
-<!-- Add your site or app content here -->
-  <div class="hero-full-container background-image-container white-text-container" style="background-image: url('./static/assets/images/blur-close-up-code-computer-546819.jpg')">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="hero-full-wrapper">
-            <div class="text-content">
-              <h1>Hello,<br>
-                <span id="typed-strings">
-                  <span>I'm Soumyajit Das</span>
-                  <span>Student</span>
-                  <span>Python Developer</span>
-                  <span>Machine Learning Enthusiast</span>
-                  <span>Data Science Enthusiast</span>
-                </span>
-                <span id="typed"></span>
-              </h1>
+    <!-- Terminal Section -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="terminal-window reveal">
+          <div class="terminal-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <div style="margin-left: 1rem; color: #888; font-size: 0.85rem;">soumyajit@portfolio: ~</div>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <div class="terminal-line">Welcome to my interactive portfolio terminal!</div>
+            <div class="terminal-line">Type 'help' to see available commands.</div>
+            <div class="terminal-input-wrap">
+              <span class="terminal-prompt">~</span>
+              <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false">
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-     type();
-     movingBackgroundImage();
-  });
-</script>
+    <!-- Tech Ticker Section -->
+    <section class="section">
+      <div class="ticker-wrap reveal">
+        <div class="ticker-content">
+          <i class="fa-brands fa-python"></i>
+          <i class="fa-brands fa-java"></i>
+          <i class="fa-brands fa-aws"></i>
+          <i class="fa-brands fa-docker"></i>
+          <i class="fa-brands fa-git-alt"></i>
+          <i class="fa-brands fa-linux"></i>
+          <i class="fa-solid fa-database"></i>
+          <i class="fa-solid fa-code-branch"></i>
+          <i class="fa-brands fa-python"></i>
+          <i class="fa-brands fa-java"></i>
+          <i class="fa-brands fa-aws"></i>
+          <i class="fa-brands fa-docker"></i>
+        </div>
+      </div>
+    </section>
 
+    <!-- Testimonials Section -->
+    <section class="section">
+      <div class="container reveal">
+        <h2 class="text-center" style="font-size: 2.5rem; margin-bottom: var(--space-xl);">What People Say</h2>
+        <div class="grid grid-cols-2">
+          <div class="card testimonial-card">
+            <p class="card-text" style="font-style: italic; font-size: 1.1rem;">"I have worked with Soumyajit for the same project. Soumyajit is also always the first to jump in if newer members of the team run into issues. He is very dedicated to his work and always up for learning more."</p>
+            <h4 style="margin-bottom: 0;">Shivam Singh</h4>
+            <span style="color: var(--accent-primary); font-size: 0.9rem;">Software Development Engineer @ Amazon | Building Scalable Software Solutions</span>
+          </div>
+          <div class="card testimonial-card">
+            <p class="card-text" style="font-style: italic; font-size: 1.1rem;">"I have worked with Soumyajit as a software developer and can attest to their coding and technical skills. Soumyajit is highly skilled in Programming Language and has consistently developed high-quality, scalable software solutions for our team. Soumyajit is able to quickly learn and adapt to new technologies, making them a valuable asset in a rapidly evolving field. He works well in a team and can effectively communicate technical information."</p>
+            <h4 style="margin-bottom: 0;">Vaidehi Baranwal</h4>
+            <span style="color: var(--accent-primary); font-size: 0.9rem;">Assistant Consultant @ Tata Consultancy Services</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<script type="text/javascript" src="./static/main.70a66962.js"></script></body>
-
-</html>
+  <!-- Footer -->
+{% endblock %}
